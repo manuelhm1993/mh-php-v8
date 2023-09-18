@@ -1,17 +1,26 @@
 <?php
 
-// Interfaz padre
 interface iA {
-    public function prueba();
+    public function prueba1();
 }
 
-// Interfaz que hereda de la interfaz iA
-interface iB extends iA {
+interface iB {
     public function prueba2();
 }
 
-// Clase que implementa la interfaz iB, debe definir todos los métodos de iB e iA
-class C implements iB {
-    public function prueba() {}
+// Las interfaces soportan herencia múltiple, las clases no
+interface iC extends iA, iB {
+    public function prueba3();
+}
+
+interface iD {
+    public function prueba4();
+}
+
+// Se pueden implementar múltiples interfaces separadas por comas
+class D implements iC, iD {
+    public function prueba1() {}
     public function prueba2() {}
+    public function prueba3() {}
+    public function prueba4() {}
 }
