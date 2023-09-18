@@ -1,8 +1,9 @@
 <?php
 // Usando $_REQUEST no importa el verbo utilizado, se podrá acceder usando los name de los inputs
 $request = [
-    'name' => $_REQUEST['name'],
-    'edad' => $_REQUEST['edad'],
+    'name'   => $_REQUEST['name'],
+    'edad'   => $_REQUEST['edad'],
+    'genero' => $_REQUEST['genero'],
 ];
 ?>
 
@@ -18,6 +19,7 @@ $request = [
     <ul>
         <li>Nombre: <?php echo $request['name'] ?></li>
         <li>Edad: <?php echo $request['edad'] ?></li>
+        <li>Género: <?php echo $request['genero'] ?></li>
     </ul>
 </body>
 </html>
