@@ -1,3 +1,5 @@
 <?php
 
-echo "Hola mundo";
+header('Location: poo/index.php');
+
+// echo "Hola mundo";
