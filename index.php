@@ -6,7 +6,8 @@
     <title>Formularios</title>
 </head>
 <body>
-    <form action="procesar.php" method="get">
+    <!-- Para enviar archivos es obligatorio el uso de POST y usar enctype -->
+    <form action="procesar.php" method="POST" enctype="multipart/form-data">
         <label>
             Nombre:
             <input type="text" name="name" placeholder="Nombre">
@@ -58,6 +59,14 @@
         </div>
 
         <br>
+
+        <label>
+            Imagen:
+            <br>
+            <input type="file" name="image">
+        </label>
+
+        <br><br>
         
         <button type="submit">Enviar</button>
     </form>
