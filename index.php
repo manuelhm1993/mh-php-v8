@@ -1,16 +1,16 @@
 <?php 
-$a = 5;
-$b = 10;
 
-// Parámetros por referencia
-function test(&$value) {
-    $value += 10;
+// Spread operator, puede ser usado para empaquetar argumentos variables en un array para la función o desempaquetar los 
+// elementos de un array
+function concatenar(...$palabras) {
+    $sentencia = "";
+
+    // $palabras se vuelve un array con todos los argumentos variables recibidos
+    foreach ($palabras as $palabra) {
+        $sentencia .= "$palabra "; 
+    }
+
+    return $sentencia;
 }
 
-test($a);
-test($b);
-
-echo $a;
-echo "<br>";
-echo $b;
-echo "<br>";
+echo concatenar('Me', 'cago', 'en', 'Maduro', 'malditos', 'todos');
