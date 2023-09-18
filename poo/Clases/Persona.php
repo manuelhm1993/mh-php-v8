@@ -2,29 +2,29 @@
 
 class Persona {
     // Propiedades
-    private ?string $nombre; // Nullable
-    private ?string $apellido;
-    private ?int $edad;
+    private string $nombre; 
+    private ?string $apellido; // Nullable
+    private int $edad;
 
     // Métodos
     // 
     // Constructor
-    public function __construct(?string $nombre = null, ?string $apellido = null, ?int $edad = null) {
+    public function __construct(string $nombre, ?string $apellido, int $edad) {
         $this->nombre   = $this->darFormatoEntrada($nombre);
-        $this->apellido = $this->darFormatoEntrada($apellido);
+        $this->apellido = $this->darFormatoEntrada((!is_null($apellido)) ? $apellido : '');
         $this->edad     = $edad;
     }
 
     // Getters
-    public function getNombre(): ?string { // Devuelve string o null
+    public function getNombre(): string { 
         return $this->darFormatoSalida($this->nombre);
     }
 
-    public function getApellido(): ?string {
+    public function getApellido(): ?string { // Devuelve string o null
         return $this->darFormatoSalida($this->apellido);
     }
 
-    public function getEdad(): ?int {
+    public function getEdad(): int {
         return $this->edad;
     }
 
