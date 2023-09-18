@@ -1,14 +1,8 @@
 <?php 
+$a = 5;
 
-$a = 5; // Ámbito global
-
-function test() {
-    $a = 4; // Ámbito local
-
+$test = function () use ($a) {
     echo $a;
-}
+}; 
 
-test();
-
-echo "<br>";
-echo $a;
+$test();
