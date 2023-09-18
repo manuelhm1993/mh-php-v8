@@ -26,12 +26,34 @@
         <div>
             <label>
                 <input type="radio" name="genero" value="masculino" checked>
-                Masculino:
+                Masculino
+            </label>
+
+            <label>
+                <input type="radio" name="genero" value="femenino">
+                Femenino
+            </label>
+        </div>
+
+        <br>
+
+        <p>Roles:</p>
+
+        <div>
+            <label>
+                <!-- Se debe especificar que es un array -->
+                <input type="checkbox" name="roles[]" value="administrador">
+                Administrador
             </label>
             
             <label>
-                <input type="radio" name="genero" value="femenino">
-                Femenino:
+                <input type="checkbox" name="roles[]" value="editor">
+                Editor
+            </label>
+
+            <label>
+                <input type="checkbox" name="roles[]" value="moderador">
+                Moderador
             </label>
         </div>
 

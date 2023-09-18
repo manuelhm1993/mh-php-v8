@@ -4,6 +4,7 @@ $request = [
     'name'   => $_REQUEST['name'],
     'edad'   => $_REQUEST['edad'],
     'genero' => $_REQUEST['genero'],
+    'roles'  => $_REQUEST['roles'],
 ];
 ?>
 
@@ -19,7 +20,16 @@ $request = [
     <ul>
         <li>Nombre: <?php echo $request['name'] ?></li>
         <li>Edad: <?php echo $request['edad'] ?></li>
-        <li>Género: <?php echo $request['genero'] ?></li>
+        <li>Género: <?php echo ucwords($request['genero']) ?></li>
+        <li>Roles: 
+            <ol>
+                <?php 
+                    foreach ($request['roles'] as $rol) {
+                ?>
+                <li><?php echo ucwords($rol) ?></li>
+                <?php } ?>
+            </ol>
+        </li>
     </ul>
 </body>
 </html>
