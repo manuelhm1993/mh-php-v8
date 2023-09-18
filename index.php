@@ -1,11 +1,10 @@
 <?php 
 
-// Ejercicio del árbol de navidad
-$filas = 10;
+$nombres = [
+    'Manuel', 'Raquel', 'Desireé', 'Fanny'
+];
 
-for ($i = 1; $i <= $filas; $i++) { 
-    for ($j = 0; $j < $i; $j++) { 
-        echo "*";
-    }
-    echo "<br>";
+foreach ($nombres as $clave => $nombre) {
+    echo "$clave - $nombre";
+    echo '<br>';
 }
