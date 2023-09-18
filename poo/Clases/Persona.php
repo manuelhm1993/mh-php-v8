@@ -66,6 +66,16 @@ class Venezolano extends Persona {
     public function getEstado(): string { 
         return $this->darFormatoSalida($this->estado);
     }
+
+    // Extender el alcance de un método
+    public function setApellidos(string $apellido1, string $apellido2): void {
+        // Llamar al método padre para ejecutar el comportamiento original
+        parent::setApellidos($this->darFormatoEntrada($apellido1), $this->darFormatoEntrada($apellido2));
+
+        // Extender el alcance
+        echo "Apellidos asignados correctamente - venezolano";
+        echo "<br>";
+    }
 }
 
 class Chileno extends Persona {
