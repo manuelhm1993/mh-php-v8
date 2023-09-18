@@ -13,6 +13,13 @@
         </label>
 
         <br>
+
+        <label>
+            Edad:
+            <input type="number" name="edad" min="1" max="120" placeholder="Edad">
+        </label>
+
+        <br>
         
         <button type="submit">Enviar</button>
     </form>
