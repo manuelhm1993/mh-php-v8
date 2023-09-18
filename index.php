@@ -1,9 +1,11 @@
 <?php 
 
-$i = 0;
+$i = 10;
 
-while($i < 10) {
-    echo "Hola mundo " . ($i + 1);
-    echo "<br>";
+do {
     $i++;
-}
+    echo "Hola mundo $i";
+    echo "<br>";
+} while($i < 10);
+
+echo "Fin del programa";
