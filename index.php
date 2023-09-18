@@ -1,9 +1,32 @@
 <?php 
 
-$a = 4;
-$b = 5;
+$a = 3;
 
-// Operador ternario
-$resultado = ($a < $b) ? 'menor' : (($a > $b) ? 'mayor' : 'igual');
+switch ($a) {
+    case 1:
+        echo "Lunes";
+        break;
+    case 2:
+        echo "Martes";
+        break;
+    case 3:
+        echo "Miércoles";
+        break;
+    case 4:
+        echo "Jueves";
+        break;
+    case 5:
+        echo "Viernes";
+        break;
+    case 6:
+        echo "Sábado";
+        break;
+    case 7:
+        echo "Domingo";
+        break;
+    default:
+        echo "Opción no válida";
+        break;
+}
 
-echo "El valor de 'a' es $resultado que el valor de 'b'";
+echo "<br>";
