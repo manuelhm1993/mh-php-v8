@@ -1,18 +1,17 @@
 <?php
 
-// Declaración de una interfaz, es un modelo a seguir para el diseño de una clase
-interface iTemplate {
-    public function setVariable(string $name): void;
-    public function getHtml(): string;
+// Interfaz padre
+interface iA {
+    public function prueba();
 }
 
-// Implementar una interfaz, se deben definir todos los métodos de la misma
-class Template implements iTemplate {
-    public function setVariable(string $name): void {
-        
-    }
+// Interfaz que hereda de la interfaz iA
+interface iB extends iA {
+    public function prueba2();
+}
 
-    public function getHtml(): string {
-        return "";
-    }
+// Clase que implementa la interfaz iB, debe definir todos los métodos de iB e iA
+class C implements iB {
+    public function prueba() {}
+    public function prueba2() {}
 }
