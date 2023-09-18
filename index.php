@@ -1,10 +1,9 @@
 <?php 
 
-$a = 6;
+$a = 4;
 $b = 5;
-$message = "El valor de 'a' es menor que el valor de 'b'";
 
 // Operador ternario
-echo ($a < $b) 
-? $message 
-: (($a > $b) ? str_replace('menor', 'mayor' , $message) : str_replace('menor', 'igual' , $message));
+$resultado = ($a < $b) ? 'menor' : (($a > $b) ? 'mayor' : 'igual');
+
+echo "El valor de 'a' es $resultado que el valor de 'b'";
