@@ -1,7 +1,15 @@
 <?php
-$request = [
-    'name' => $_GET['name'],
-];
+// Verificar por qué método se envió la petición
+if(isset($_GET['name'])) {
+    $request = [
+        'name' => $_GET['name'],
+    ];
+}
+else {
+    $request = [
+        'name' => $_POST['name'],
+    ];
+}
 ?>
 
 <!DOCTYPE html>

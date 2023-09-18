@@ -6,7 +6,7 @@
     <title>Formularios</title>
 </head>
 <body>
-    <form action="procesar.php" method="GET">
+    <form action="procesar.php" method="POST">
         <label>
             Nombre:
             <input type="text" name="name" placeholder="Nombre">
