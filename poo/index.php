@@ -4,7 +4,7 @@
 require_once "Clases/Persona.php";
 
 // Instancia de clase
-$persona = new Persona('Manuel', 'Henriquez', 30);
+$persona = new Persona();
 
 // Llamar a sus métodos usando interpolación compleja
 echo "- Nombre: {$persona->getNombre()}";
