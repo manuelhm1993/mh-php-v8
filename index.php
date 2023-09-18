@@ -1,9 +1,9 @@
 <?php 
 
 for ($i = 0; $i < 20; $i++) {
-    // Romper el bucle en caso de cumplirse la condición
-    if($i === 10) {
-        break;
+    // Ignorar una iteración
+    if(($i === 6) || ($i === 14)) {
+        continue;
     }
 
     echo ($i + 1) . "<br>";
