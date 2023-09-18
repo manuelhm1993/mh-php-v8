@@ -1,10 +1,11 @@
 <?php
 // Usando $_REQUEST no importa el verbo utilizado, se podrá acceder usando los name de los inputs
 $request = [
-    'name'   => $_REQUEST['name'],
-    'edad'   => $_REQUEST['edad'],
-    'genero' => $_REQUEST['genero'],
-    'roles'  => $_REQUEST['roles'],
+    'name'    => $_REQUEST['name'],
+    'edad'    => $_REQUEST['edad'],
+    'genero'  => $_REQUEST['genero'],
+    'roles'   => $_REQUEST['roles'],
+    'mensaje' => $_REQUEST['mensaje'],
 ];
 
 if(isset($_FILES['image'])) {
@@ -43,6 +44,7 @@ if(isset($_FILES['image'])) {
             Avatar: 
             <img src="<?php echo (isset($avatar)) ? $avatar : '' ?>" alt="Avatar del usuario">
         </li>
+        <li>Mensaje: <?php echo $request['mensaje'] ?></li>
     </ul>
 </body>
 </html>

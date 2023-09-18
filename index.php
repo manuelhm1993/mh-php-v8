@@ -22,19 +22,13 @@
 
         <br>
 
-        <p>Género:</p>
-
-        <div>
-            <label>
-                <input type="radio" name="genero" value="masculino" checked>
-                Masculino
-            </label>
-
-            <label>
-                <input type="radio" name="genero" value="femenino">
-                Femenino
-            </label>
-        </div>
+        <label>
+            Género:
+            <select name="genero">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select>
+        </label>
 
         <br>
 
@@ -64,6 +58,14 @@
             Imagen:
             <br>
             <input type="file" name="image">
+        </label>
+
+        <br>
+
+        <label>
+            Mensaje:
+            <br>
+            <textarea name="mensaje" cols="30" rows="10"></textarea>
         </label>
 
         <br><br>
