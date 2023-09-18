@@ -9,3 +9,6 @@ function test() {
 }
 
 test();
+
+echo "<br>";
+echo $a;
