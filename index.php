@@ -1,12 +1,12 @@
 <?php 
 
-for ($i = 0; $i < 20; $i++) {
-    // Finalizar la ejecución del programa
-    if(($i === 6) || ($i === 14)) {
-        die();
-    }
+declare(strict_types=1); // Declaración de tipos estricta
 
-    echo ($i + 1) . "<br>";
+// Definir el tipo de datos a recibir y a devolver
+function sumarEnteros(int $valor1, int $valor2): int | float {
+    return ($valor1 + $valor2) / 2;
 }
 
-echo "Esta línea no se ejecutará";
+$resultado = sumarEnteros(2, 5);
+
+echo $resultado;
