@@ -1,11 +1,13 @@
 <?php 
 
-$i = 10;
+// Ejercicio de potencia
+$base      = 10;
+$exponente = 2;
+$resultado = 1;
 
-do {
-    $i++;
-    echo "Hola mundo $i";
-    echo "<br>";
-} while($i < 10);
+// Para $i = 1 mientras sea <= $exponente hacer
+for ($i = 1; $i <= $exponente; $i++) { 
+    $resultado *= $base;
+}
 
-echo "Fin del programa";
+echo "$base ^ $exponente = $resultado";
