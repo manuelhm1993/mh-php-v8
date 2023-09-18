@@ -1,12 +1,12 @@
 <?php 
 
 for ($i = 0; $i < 20; $i++) {
-    // Ignorar una iteración
+    // Finalizar la ejecución del programa
     if(($i === 6) || ($i === 14)) {
-        continue;
+        die();
     }
 
     echo ($i + 1) . "<br>";
 }
 
-echo "Saliste del bucle";
+echo "Esta línea no se ejecutará";
