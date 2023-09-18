@@ -1,6 +1,5 @@
 <?php 
 
-// Devuelve un array con la secuencia especificada
-$array = range(10, 20);
+$array = ["Manuel", "Raquel", "Desireé", "Fanny"];
 
-echo $array[5];
+echo (in_array("Desireé", $array)) ? "Encontrado" : "No encontrado";
