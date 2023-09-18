@@ -1,5 +1,7 @@
 <?php 
 
-$cadena = "Hola mundo como estás?";
+$array = [10, 13, 15, 20];
 
-echo str_contains($cadena, 'mundos') ? 'Si se encuenta' : 'No se encuentra';
+$array[] = 17; // Agregar dinámicamente elementos a un array
+
+echo $array[4];
