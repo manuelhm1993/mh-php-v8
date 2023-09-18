@@ -5,15 +5,16 @@ $request = [
     'edad'   => $_REQUEST['edad'],
     'genero' => $_REQUEST['genero'],
     'roles'  => $_REQUEST['roles'],
-    'image'  => $_FILES['image'],
 ];
 
-$image = $request['image']; // Recuperar el archivo
-$patch  = __DIR__."/assets/img/{$image['name']}"; // Definir el directorio donde se guardará
+if(isset($_FILES['image'])) {
+    $image = $_FILES['image']; // Recuperar el archivo
+    $patch  = __DIR__."/assets/img/{$image['name']}"; // Definir el directorio donde se guardará
 
-move_uploaded_file($image['tmp_name'], $patch); // Mover el archivo del directorio temporal a la ruta deseada
+    move_uploaded_file($image['tmp_name'], $patch); // Mover el archivo del directorio temporal a la ruta deseada
 
-$avatar = "assets/img/{$image['name']}"; // Ruta del avatar
+    $avatar = "assets/img/{$image['name']}"; // Ruta del avatar
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +41,7 @@ $avatar = "assets/img/{$image['name']}"; // Ruta del avatar
         </li>
         <li>
             Avatar: 
-            <img src="<?php echo $avatar ?>" alt="Avatar del usuario">
+            <img src="<?php echo (isset($avatar)) ? $avatar : '' ?>" alt="Avatar del usuario">
         </li>
     </ul>
 </body>
