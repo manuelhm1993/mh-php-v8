@@ -3,7 +3,7 @@
 class Persona {
     // Propiedades
     private string $nombre; 
-    private string $apellido; 
+    private string $apellido1, $apellido2; 
     private int $edad;
 
     // Métodos
@@ -13,8 +13,9 @@ class Persona {
         return $this->darFormatoSalida($this->nombre);
     }
 
-    public function getApellido(): string { 
-        return $this->darFormatoSalida($this->apellido);
+    public function getApellidos(): string { 
+        // Concatenación con interpolación compleja
+        return "{$this->darFormatoSalida($this->apellido1)} {$this->darFormatoSalida($this->apellido2)}";
     }
 
     public function getEdad(): int {
@@ -26,8 +27,9 @@ class Persona {
         $this->nombre = $this->darFormatoEntrada($nombre);
     }
 
-    public function setApellido(string $apellido): void {
-        $this->apellido = $this->darFormatoEntrada($apellido);
+    public function setApellidos(string $apellido1, string $apellido2): void {
+        $this->apellido1 = $this->darFormatoEntrada($apellido1);
+        $this->apellido2 = $this->darFormatoEntrada($apellido2);
     }
 
     public function setEdad(int $edad): void {
@@ -84,5 +86,11 @@ class Chileno extends Persona {
 
     public function getRegion(): string { 
         return $this->darFormatoSalida($this->region);
+    }
+
+    // Sobreescritura de métodos, cambiar el comportamiento original
+    public function setApellidos(string $apellido1, string $apellido2): void {
+        // Como se está usando la encapsulación, se debe llamar al método set de la clase padre
+        parent::setApellidos($this->darFormatoEntrada($apellido2), $this->darFormatoEntrada($apellido1));
     }
 }
