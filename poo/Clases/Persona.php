@@ -10,18 +10,18 @@ class Persona {
     // 
     // Constructor
     public function __construct(?string $nombre = null, ?string $apellido = null, ?int $edad = null) {
-        $this->nombre   = $nombre;
-        $this->apellido = $apellido;
+        $this->nombre   = $this->darFormatoEntrada($nombre);
+        $this->apellido = $this->darFormatoEntrada($apellido);
         $this->edad     = $edad;
     }
 
     // Getters
     public function getNombre(): ?string { // Devuelve string o null
-        return $this->nombre;
+        return $this->darFormatoSalida($this->nombre);
     }
 
     public function getApellido(): ?string {
-        return $this->apellido;
+        return $this->darFormatoSalida($this->apellido);
     }
 
     public function getEdad(): ?int {
@@ -30,14 +30,23 @@ class Persona {
 
     // Setters
     public function setNombre(string $nombre): void {
-        $this->nombre = $nombre;
+        $this->nombre = $this->darFormatoEntrada($nombre);
     }
 
     public function setApellido(string $apellido): void {
-        $this->apellido = $apellido;
+        $this->apellido = $this->darFormatoEntrada($apellido);
     }
 
     public function setEdad(int $edad): void {
         $this->edad = $edad;
+    }
+
+    // Comportamientos
+    private function darFormatoEntrada(string $cadena): string {
+        return strtolower($cadena);
+    }
+
+    private function darFormatoSalida(string $cadena): string {
+        return ucwords($cadena);
     }
 }

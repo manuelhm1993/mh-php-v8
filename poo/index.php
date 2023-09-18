@@ -5,8 +5,8 @@ require_once "Clases/Persona.php";
 
 // Crear una colección de personas
 $personas = [
-    new Persona('Manuel', 'Henriquez', 30), 
-    new Persona('Desireé', "Fernández", 22),
+    new Persona('MaNuEl', 'HenRiQueZ', 30), 
+    new Persona('DesIrEé', "FeRnánDez", 22),
 ];
 
 // Iterar el array
