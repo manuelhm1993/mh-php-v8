@@ -15,3 +15,20 @@ if(defined('USUARIO')) {
 else {
     echo "El usuario NO está registrado";
 }
+
+// Constantes predefinidas de PHP
+echo "<br>";
+echo "Mi versión de php es: " . PHP_VERSION;
+echo "<br>";
+echo "Versión de php más reciente: " . PHP_MAJOR_VERSION;
+echo "<br>";
+echo "Versión de php más antigua: " . PHP_MINOR_VERSION;
+echo "<br>";
+echo "Versión de php actualmente publicada: " . PHP_RELEASE_VERSION;
+echo "<br>";
+echo "Esta versión corre en el SO: " . PHP_OS;
+echo "<br>";
+echo "Ruta del directorio de extensiones: " . PEAR_EXTENSION_DIR;
+echo "<br>";
+echo "API del servidor de compilación: " . PHP_SAPI;
+ 
