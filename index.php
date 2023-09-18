@@ -1,18 +1,9 @@
 <?php 
 
-$a = 1;
+$i = 0;
 
-// Expresión match a partir de php 8, simplifica el switch en casos de evaluación simple
-$resultado = match($a) {
-    1 => 'Lunes',
-    2 => 'Martes',
-    3 => 'Miércoles',
-    4 => 'Jueves',
-    5 => 'Viernes',
-    6 => 'Sábado',
-    7 => 'Domingo',
-    default => 'Opción no válida',
-};
-
-echo $resultado;
-echo "<br>";
+while($i < 10) {
+    echo "Hola mundo " . ($i + 1);
+    echo "<br>";
+    $i++;
+}
