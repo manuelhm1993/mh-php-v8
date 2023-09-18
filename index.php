@@ -1,15 +1,15 @@
 <?php 
-    $nombre = "Manuel Henriquez";
-?>
+define('CURSO', 'PHP 8 desde cero'); // Forma clásica de definir constantes
+const USUARIO = 'MHenriquez'; // Esta es la forma de definir constantes de clase: private statis const y funciona fuera de una clase
+const ANIMALES = [ // Array como constante
+    'Perro',
+    'Gato',
+    'Loro',
+    'Tortuga',
+];
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso PHP 8</title>
-</head>
-<body>
-    <h1><?php echo "Hola mundo, mi nombre es $nombre" ?></h1>
-</body>
-</html>
+echo "- Curso: " . CURSO 
+. "<br>"
+. "- Usuario: " . USUARIO
+. "<br>"
+. "- Animal: " . ANIMALES[0];
