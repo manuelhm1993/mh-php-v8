@@ -2,6 +2,6 @@
 
 require_once "Clases/Visibilidad.php";
 
-$obj = new Visibilidad;
+$obj = new Visibilidad2;
 
 echo $obj->printHello();

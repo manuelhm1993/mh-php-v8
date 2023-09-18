@@ -12,3 +12,14 @@ class Visibilidad {
         echo "{$this->private} <br>";
     }
 }
+
+class Visibilidad2 extends Visibilidad {
+    public $public = "Public 2"; 
+    protected $protected = "Protected 2"; // Sobreescribir las propiedades
+
+    public function printHello(): void {
+        echo "{$this->public} <br>";
+        echo "{$this->protected} <br>";
+        // echo "{$this->private} <br>"; // No visible
+    }
+}
