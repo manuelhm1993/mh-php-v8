@@ -1,12 +1,11 @@
 <?php 
 
-for ($i = 0; $i < 20; $i++) {
-    // Finalizar la ejecución del programa
-    if(($i === 6) || ($i === 14)) {
-        die();
-    }
-
-    echo ($i + 1) . "<br>";
-}
-
-echo "Esta línea no se ejecutará";
+// Funciones predefinidas del lenguaje
+echo "Marca de tiempo: " . time();
+echo "<br>";
+echo "Raíz cuadrada de 144: " . sqrt(144);
+echo "<br>";
+echo "Número aleatorio entre 90-100: " . rand(90, 100);
+echo "<br>";
+echo "Número PI: " . pi();
+echo "<br>";
