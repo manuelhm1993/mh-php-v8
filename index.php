@@ -1,8 +1,16 @@
 <?php 
 $a = 5;
+$b = 10;
 
-$test = function () use ($a) {
-    echo $a;
-}; 
+// Parámetros por referencia
+function test(&$value) {
+    $value += 10;
+}
 
-$test();
+test($a);
+test($b);
+
+echo $a;
+echo "<br>";
+echo $b;
+echo "<br>";
