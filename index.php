@@ -1,5 +1,4 @@
 <?php 
-$numero = 5;
-$unario = -$numero;
+$operacion = 4 * 5 - 6 + 4 * 2 + 1 * 0;
 
-echo "Negado: $unario";
+echo "Resultado: $operacion";
