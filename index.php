@@ -1,8 +1,9 @@
 <?php 
 
-declare(strict_types=1);
+declare(strict_types=1); // Declaración de tipos estricta
 
-function sumarEnteros(int $valor1, int $valor2) {
+// Definir el tipo de datos a recibir y a devolver
+function sumarEnteros(int $valor1, int $valor2): int {
     return $valor1 + $valor2;
 }
 
