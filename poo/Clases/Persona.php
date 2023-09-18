@@ -2,7 +2,7 @@
 
 class Persona {
     // Propiedades
-    private ?string $nombre;
+    private ?string $nombre; // Nullable
     private ?string $apellido;
     private ?int $edad;
 
@@ -16,7 +16,7 @@ class Persona {
     }
 
     // Getters
-    public function getNombre(): ?string {
+    public function getNombre(): ?string { // Devuelve string o null
         return $this->nombre;
     }
 
