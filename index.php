@@ -1,4 +1,5 @@
 <?php 
-$operacion = 4 * 5 - 6 + 4 * 2 + 1 * 0;
+$a = "Manuel";
+$b = null;
 
-echo "Resultado: $operacion";
+var_dump($a && $b);
