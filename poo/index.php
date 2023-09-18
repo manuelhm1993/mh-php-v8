@@ -1,21 +1,7 @@
 <?php
 
-// Requerir la clase Persona en este documento
-require_once "Clases/Persona.php";
+require_once "Clases/Visibilidad.php";
 
-$chileno = new Chileno;
+$obj = new Visibilidad;
 
-$chileno->setApellidos('Henriquez', 'Moreno');
-
-// Al haber sobreescrito el método, se llama al de la clase hijo, los apellidos invertidos
-echo $chileno->getApellidos();
-
-echo "<br>";
-echo "<br>";
-
-$venezolano = new Venezolano;
-
-$venezolano->setApellidos('Henriquez', 'Moreno');
-
-// Llama al método heredado del padre, apellidos en el orden correcto
-echo $venezolano->getApellidos();
+echo $obj->printHello();
