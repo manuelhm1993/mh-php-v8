@@ -1,7 +1,10 @@
 <?php 
 
-$array = [10, "Manuel", 15, 20, false];
+// Array asociativo
+$datos = [
+    'nombre'  => 'Manuel Henriquez',
+    'email'   => 'manuel@mhenriquez.com',
+    'celular' => '0424-1234567',
+];
 
-$array[] = 17; // Agregar dinámicamente elementos a un array
-
-echo $array[3];
+echo $datos['email'];
