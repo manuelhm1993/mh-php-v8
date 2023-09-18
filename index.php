@@ -1,5 +1,5 @@
 <?php 
 
-$cadena = "Hola mundo como estás?";
+$array = ["Manuel", "Raquel", "Desireé", "Fanny"];
 
-echo str_contains($cadena, 'mundos') ? 'Si se encuenta' : 'No se encuentra';
+echo (in_array("Desireé", $array)) ? "Encontrado" : "No encontrado";
