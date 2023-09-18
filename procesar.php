@@ -1,15 +1,8 @@
 <?php
-// Verificar por qué método se envió la petición
-if(isset($_GET['name'])) {
-    $request = [
-        'name' => $_GET['name'],
-    ];
-}
-else {
-    $request = [
-        'name' => $_POST['name'],
-    ];
-}
+// Usando $_REQUEST no importa el verbo utilizado, se podrá acceder usando los name de los inputs
+$request = [
+    'name' => $_REQUEST['name'],
+];
 ?>
 
 <!DOCTYPE html>
