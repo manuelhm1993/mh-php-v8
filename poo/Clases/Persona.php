@@ -3,24 +3,17 @@
 class Persona {
     // Propiedades
     private string $nombre; 
-    private ?string $apellido; // Nullable
+    private string $apellido; 
     private int $edad;
 
     // Métodos
     // 
-    // Constructor
-    public function __construct(string $nombre, ?string $apellido, int $edad) {
-        $this->nombre   = $this->darFormatoEntrada($nombre);
-        $this->apellido = $this->darFormatoEntrada((!is_null($apellido)) ? $apellido : '');
-        $this->edad     = $edad;
-    }
-
     // Getters
     public function getNombre(): string { 
         return $this->darFormatoSalida($this->nombre);
     }
 
-    public function getApellido(): ?string { // Devuelve string o null
+    public function getApellido(): string { 
         return $this->darFormatoSalida($this->apellido);
     }
 
@@ -41,12 +34,55 @@ class Persona {
         $this->edad = $edad;
     }
 
-    // Comportamientos
-    private function darFormatoEntrada(string $cadena): string {
+    // Usar protected para poder heredar estos métodos
+    protected function darFormatoEntrada(string $cadena): string {
         return strtolower($cadena);
     }
 
-    private function darFormatoSalida(string $cadena): string {
+    protected function darFormatoSalida(string $cadena): string {
         return ucwords($cadena);
+    }
+}
+
+// Herencia
+class Venezolano extends Persona {
+    private string $municipio;
+    private string $estado;
+
+    public function setMunicipio(string $municipio): void {
+        $this->municipio = $this->darFormatoEntrada($municipio);
+    }
+
+    public function setEstado(string $estado): void {
+        $this->estado = $this->darFormatoEntrada($estado);
+    }
+
+    public function getMunicipio(): string { 
+        return $this->darFormatoSalida($this->municipio);
+    }
+
+    public function getEstado(): string { 
+        return $this->darFormatoSalida($this->estado);
+    }
+}
+
+class Chileno extends Persona {
+    private string $comuna;
+    private string $region;
+
+    public function setComuna(string $comuna): void {
+        $this->comuna = $this->darFormatoEntrada($comuna);
+    }
+
+    public function setRegion(string $region): void {
+        $this->region = $this->darFormatoEntrada($region);
+    }
+
+    public function getComuna(): string { 
+        return $this->darFormatoSalida($this->comuna);
+    }
+
+    public function getRegion(): string { 
+        return $this->darFormatoSalida($this->region);
     }
 }
