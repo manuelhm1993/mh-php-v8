@@ -1,23 +1,12 @@
 <?php 
-// Función con retorno de valor y parámetro por defecto
-function factorial($value = 0) {
-    $factorial = 1;
-    
-    for ($i = 1; $i <= $value; $i++) { 
-        $factorial *= $i;
-    }
 
-    return $factorial;
+$a = 5; // Ámbito global
+
+function test() {
+    // $a; // Ámbito local - La variable $a del ámbito global no existe en la función
+    global $a; // Ámbito local - La variable $a es llamada del ámbito global y puede ser usada
+
+    echo $a;
 }
 
-// Usar el valor por defecto
-$factorial = factorial();
-
-echo "El factorial de 0 es: $factorial";
-echo "<br>";
-
-$numero = 7;
-$factorial = factorial($numero);
-
-echo "El factorial de $numero es: $factorial";
-echo "<br>";
+test();
