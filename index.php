@@ -1,16 +1,23 @@
 <?php 
-// Funciones definidas por nosotros
-function factorial($value) {
+// Función con retorno de valor y parámetro por defecto
+function factorial($value = 0) {
     $factorial = 1;
     
     for ($i = 1; $i <= $value; $i++) { 
         $factorial *= $i;
     }
 
-    echo "El factorial de $value es: $factorial";
-    echo "<br>";
+    return $factorial;
 }
 
-// Llamada de función
-factorial(0);
-factorial(9);
+// Usar el valor por defecto
+$factorial = factorial();
+
+echo "El factorial de 0 es: $factorial";
+echo "<br>";
+
+$numero = 7;
+$factorial = factorial($numero);
+
+echo "El factorial de $numero es: $factorial";
+echo "<br>";
