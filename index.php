@@ -1,14 +1,6 @@
 <?php 
 
-$array = [1, 2, 3];
+// Devuelve un array con la secuencia especificada
+$array = range(10, 20);
 
-// Desempaquetar un array en variables
-//[$a, $b, $c] = [...$array]; // Destructory
-list($a, $b, $c) = $array;
-
-echo $a;
-echo "<br>";
-echo $b;
-echo "<br>";
-echo $c;
-echo "<br>";
+echo $array[5];
