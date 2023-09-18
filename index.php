@@ -1,6 +1,5 @@
 <?php 
 
-$cadena = "aeiou";
+$cadena = "Hola mundo como estás?";
 
-// Equivalente a find de javascript
-echo strpos($cadena, 'i');
+echo str_contains($cadena, 'mundos') ? 'Si se encuenta' : 'No se encuentra';
