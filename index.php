@@ -1,16 +1,11 @@
 <?php 
 
-// Spread operator, puede ser usado para empaquetar argumentos variables en un array para la función o desempaquetar los 
-// elementos de un array
-function concatenar(...$palabras) {
-    $sentencia = "";
+declare(strict_types=1);
 
-    // $palabras se vuelve un array con todos los argumentos variables recibidos
-    foreach ($palabras as $palabra) {
-        $sentencia .= "$palabra "; 
-    }
-
-    return $sentencia;
+function sumarEnteros(int $valor1, int $valor2) {
+    return $valor1 + $valor2;
 }
 
-echo concatenar('Me', 'cago', 'en', 'Maduro', 'malditos', 'todos');
+$resultado = sumarEnteros(2, 5);
+
+echo $resultado;
