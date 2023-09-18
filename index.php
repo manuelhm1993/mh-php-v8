@@ -31,5 +31,13 @@ $datos = [ // Dimensión 1
     ],
 ];
 
-// Para acceder a los datos se usan los índices de las dimensiones
-echo $datos[0]['direccion']['pais'];
+// Iterar todos los datos del array
+foreach($datos as $usuario) {
+    echo "- Nombre: {$usuario['nombre']}"; // Interpolación compleja
+    echo "<br>";
+    echo "- Correo: {$usuario['email']}"; // Interpolación compleja
+    echo "<br>";
+    echo "- Celular: {$usuario['celular']}"; // Interpolación compleja
+    echo "<br>";
+    echo "<hr>";
+}
