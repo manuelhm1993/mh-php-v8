@@ -1,20 +1,15 @@
 <?php 
 
-$a = 5;
-$b = 3;
+$a = 4;
+$b = 5;
 
-echo "Primer párrafo";
-echo "<br>";
-
-// Estructura condicional
+// Estructura condicional anidada
 if($a < $b) {
-    echo "Segundo párrafo";
-    echo "<br>";
+    echo "El valor de 'a' es menor que el valor de 'b'";
+}
+elseif($a > $b) {
+    echo "El valor de 'a' es mayor que el valor de 'b'";
 }
 else {
-    echo "Segundo párrafo editado";
-    echo "<br>";
+    echo "El valor de 'a' es igual que el valor de 'b'";
 }
-
-echo "Tercer párrafo";
-echo "<br>";
