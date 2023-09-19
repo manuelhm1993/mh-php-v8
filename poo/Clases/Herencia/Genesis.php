@@ -23,6 +23,23 @@ class Genesis {
         return $personas;
     }
 
+    public static function mostrarPersonas(): void {
+        $personas = self::getPersonas();
+
+        foreach ($personas as $persona) {
+            echo $persona['persona']->getApellidos();
+            echo "<br>";
+        
+            if($persona['persona'] instanceof Aleman) {
+                $persona['persona']->saludoEuropeo(); // Método heredado del trait Europeo
+            }
+            else {
+                $persona['persona']->saludoLatinoAmericano(); // Método heredado del trait LatinoAmericano
+            }
+            echo "<hr>";
+        }
+    }
+
     // No se puede iniciar una propiedad con expresiones new
     private static function setPersonas(): void {
         self::$personas = [
