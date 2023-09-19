@@ -5,17 +5,23 @@ class Humano {
     private string $apellidoPaterno, $apellidoMaterno;
     private string $dni;
 
-    public function setNombre(string $nombre): void {
+    public function setNombre(string $nombre): Humano {
         $this->nombre = $nombre;
+        
+        return $this; // Mantener vivo al objeto para poder encadenar métodos
     }
 
-    public function setApellidos(string $apellidoPaterno, string $apellidoMaterno): void {
+    public function setApellidos(string $apellidoPaterno, string $apellidoMaterno): Humano {
         $this->apellidoPaterno = $apellidoPaterno;
         $this->apellidoMaterno = $apellidoMaterno;
+        
+        return $this; // Mantener vivo al objeto para poder encadenar métodos
     }
 
-    public function setDNI(string $dni): void {
+    public function setDNI(string $dni): Humano {
         $this->dni = $dni;
+        
+        return $this; // Mantener vivo al objeto para poder encadenar métodos
     }
 
     public function getNombre(): string {
