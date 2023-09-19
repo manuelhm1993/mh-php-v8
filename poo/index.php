@@ -1,12 +1,18 @@
 <?php
 
-// No es necesario requerir los archivos en todos los documentos como en los módulos de javascript, con una vez basta
-require_once "Clases/Herencia/Persona.php";
-require_once "Clases/Herencia/Venezolano.php";
-require_once "Clases/Herencia/Chileno.php";
+require_once "Clases/Herencia/Genesis.php";
 
-$chileno = new Chileno;
+$personas = Genesis::getPersonas();
 
-$chileno->setApellidos('Henriquez', 'Moreno');
+foreach ($personas as $persona) {
+    echo $persona['persona']->getApellidos();
+    echo "<br>";
 
-echo $chileno->getApellidos();
+    if($persona['persona'] instanceof Aleman) {
+        $persona['persona']->saludoEuropeo(); // Método heredado del trait Europeo
+    }
+    else {
+        $persona['persona']->saludoLatinoAmericano(); // Método heredado del trait LatinoAmericano
+    }
+    echo "<hr>";
+}

@@ -1,6 +1,11 @@
 <?php
 
+require_once "Persona.php";
+require_once "Traits/LatinoAmericano.php";
+
 class Venezolano extends Persona {
+    use LatinoAmericano; // Forma de implementar o heredar de un trait
+
     private string $municipio;
     private string $estado;
 
