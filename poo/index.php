@@ -1,19 +1,20 @@
 <?php
 
-use Namespaces\Carpeta1\Humano;
-use Namespaces\Carpeta2\Humano as Humano2; // Importar las clases dentro del namespace y alias
+use Namespaces\Controllers\CourseController;
+use Namespaces\Models\Course;
 
-require_once "Namespaces/Carpeta1/Humano.php";
-require_once "Namespaces/Carpeta2/Humano.php"; // Requerir el archivo que incluye el namespace
+// Función para registar una clase que se debe autocargar y no requerir el archivo del namespace
+spl_autoload_register(function($clase) {
+    $archivoImportar = str_replace('\\', '/', $clase) . '.php';
 
-// Colección de humanos
-$humanos = [
-    'manuel'  => new Humano,
-    'desiree' => new Humano2,
-];
+    // Validación para verificar si el archivo existe
+    require_once (file_exists($archivoImportar) ? $archivoImportar : '');
+});
 
-// Iterar con foreach
-foreach ($humanos as $humano) {
-    $humano->saludar();
+// Al momento de invocar al constructor, se dispara el autoload de la clase
+$cursos = [new Course, new CourseController];
+
+foreach ($cursos as $curso) {
+    $curso->saludar();
     echo "<br>";
 }
