@@ -1,5 +1,5 @@
 <?php
 
-require_once "Clases/Herencia/Genesis.php";
+require_once "Namespaces/Carpeta1/Humano.php";
+require_once "Namespaces/Carpeta2/Humano.php";
 
-Genesis::mostrarPersonas();
