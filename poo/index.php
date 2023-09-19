@@ -1,4 +1,4 @@
 <?php
 
-require_once "Clases/Visibilidad.php";
+require_once "Clases/Abstractas.php";
 
