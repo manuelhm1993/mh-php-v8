@@ -1,8 +1,8 @@
 <?php
 
-$cadena = "Av. La candelaria 123";
+$cadena = "Holu";
 
 // Declaración de expresión regular básica
-$expresion = "/123$/i";
+$expresion = "/hol[aeiou]/i";
 
 echo (preg_match($expresion, $cadena)) ? 'Cumple' : 'No cumple';
