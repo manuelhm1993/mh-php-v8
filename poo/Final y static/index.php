@@ -1,7 +1,5 @@
 <?php
 
-require_once "Final.php";
+require_once "Static.php";
 
-$obj = new Departamento;
-
-echo $obj->saludar();
+Humano::saludar();
