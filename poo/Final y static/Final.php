@@ -1,6 +1,7 @@
 <?php
 
-class Hogar {
+// La palabra reservada 'final' corta la cadena de herencia
+final class Hogar {
     private string $color;
     private string $seguridad;
 
