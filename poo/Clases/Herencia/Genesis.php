@@ -1,8 +1,8 @@
 <?php
 
-require_once "Clases/Herencia/Venezolano.php";
-require_once "Clases/Herencia/Chileno.php";
-require_once "Clases/Herencia/Aleman.php";
+require_once "Venezolano.php";
+require_once "Chileno.php";
+require_once "Aleman.php";
 
 /**
  * Clase helper para instanciar personas
