@@ -1,8 +1,8 @@
 <?php
 
-use Lib\Route;
+require_once '../autoload.php';
 
-require_once '../lib/Route.php';
+use Lib\Route;
 
 Route::get('/', function () {
     echo "Hola desde la página principal";
