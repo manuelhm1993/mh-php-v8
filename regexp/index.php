@@ -1,8 +1,8 @@
 <?php
 
-$cadena = "Holu";
+$cadena = "Llegaré pronto que voy andando";
 
-// Declaración de expresión regular básica
-$expresion = "/hol*/i";
+// Subpatrones
+$expresion = "/Llegaré pronto que voy (vol|and)ando/i";
 
 echo (preg_match($expresion, $cadena)) ? 'Cumple' : 'No cumple';
