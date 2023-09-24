@@ -54,7 +54,17 @@ class Route {
                 $params = array_slice($matches, 1);
 
                 // Desempaquetar el array en distintas variables (spread operator)
-                $callback(...$params);
+                $response = $callback(...$params);
+
+                // Si la respuesta es un array o un objeto se devuelve codificado para no dar error al imprimir
+                if(is_array($response) || is_object($response)) {
+                    header('Content-Type: application/json');
+                    echo json_encode($response);
+                }
+                else {
+                    echo $response;
+                }
+
                 return;
             }
         }
