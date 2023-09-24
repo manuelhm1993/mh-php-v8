@@ -6,6 +6,6 @@
     <title>MVC</title>
 </head>
 <body>
-    <h1>Hola desde contacto</h1>
+    <h1>Único punto de acceso</h1>
 </body>
 </html>
