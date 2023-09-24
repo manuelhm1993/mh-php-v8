@@ -1,13 +1,16 @@
 <?php
 
-$cadena = "Llegaré pronto que voy andando";
+$url = 'youtu.be/xGaXH7spCyA?si=ttFBCojtll02odCd';
+// $url = 'https://www.youtube.com/watch?v=xGaXH7spCyA&list=PLZ2ovOgdI-kUSqWuyoGJMZL6xldXw6hIg&index=40';
 
-// Subpatrones de captura
-$expresion = "/Llegaré pronto que voy (vol|and)ando/i";
+// Usar los '#' como delimitadores ya que se está trabajando con http:// y habría que escaparlos
+$pattern = "#^(htt(p|ps)://)?(www\.)?(youtu\.be/|youtube\.com/watch\?v=)(\w+)#";
 
-// El subpatrón que coincide es enviado a un array llamado matches que se pasa como tercer parámetro de preg_match
-echo (preg_match($expresion, $cadena, $matches)) ? 'Cumple' : 'No cumple';
-
-// En la primera posición queda almacenada la cadena y en el siguiente el subpatrón coincidente, en este caso (and)
-echo "<br>";
-var_dump($matches);
+// Recuperar los subpatrones con matches
+if (preg_match($pattern, $url, $matches)) {
+    echo "La url es válida: id - {$matches[5]}";
+    // var_dump($matches);
+} 
+else {
+    echo "La url no es válida";
+}
