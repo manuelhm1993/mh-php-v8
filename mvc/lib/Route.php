@@ -43,13 +43,18 @@ class Route {
         foreach (self::$routes[$method] as $route => $callback) {
             // Verificar si existe el caracter ':' y sobreescribir la uri
             if (strpos($route, ':') !== false) {
-                $route = preg_replace('#:[a-z0-9]+#i', '[a-zA-Z0-9]+', $route);
+                // El subpatrón devuelve la coincidencia a la variable matches
+                $route = preg_replace('#:[a-z0-9]+#i', '([a-zA-Z0-9]+)', $route);
             }
 
             // Si la url de la petición coincide con una ruta, se ejecuta su callback y sale de la función
             // Se pude usar los delimitadores '//' o '##' para las expresiones regulares
-            if (preg_match("#^$route$#", $uri)) {
-                $callback();
+            if (preg_match("#^$route$#", $uri, $matches)) {
+                // Obtener las coincidencias del subpatrón sin contar la url, solo los parámetros
+                $params = array_slice($matches, 1);
+
+                // Desempaquetar el array en distintas variables (spread operator)
+                $callback(...$params);
                 return;
             }
         }
