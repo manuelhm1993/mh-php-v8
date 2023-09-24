@@ -14,4 +14,9 @@ Route::get('/about', function () {
     echo "Hola desde la página acerca de";
 });
 
+// Rutas con parámetros con nombre
+Route::get('/courses/:slug', function () {
+    echo "Hola desde la página de cursos";
+});
+
 Route::dispatch();
