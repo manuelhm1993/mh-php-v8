@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVC</title>
-</head>
-<body>
-    <h1>Único punto de acceso</h1>
-</body>
-</html>
+<?php
+
+use Lib\Route;
+
+require_once '../lib/Route.php';
+
+Route::get('/', function () {
+    echo "Hola desde la página principal";
+});
+
+Route::get('/contact', function () {
+    echo "Hola desde la página de contacto";
+});
+
+Route::get('/about', function () {
+    echo "Hola desde la página acerca de";
+});
