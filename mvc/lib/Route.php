@@ -19,7 +19,8 @@ class Route {
      * Registra las rutas de tipo GET
      */
     public static function get(string $uri, callable $callback): void {
-        self::clearUri($uri);
+        $uri = self::clearUri($uri);
+
         self::$routes['GET'][$uri] = $callback;
     }
 
@@ -27,7 +28,8 @@ class Route {
      * Registra las rutas de tipo POST
      */
     public static function post(string $uri, callable $callback): void {
-        self::clearUri($uri);
+        $uri = self::clearUri($uri);
+        
         self::$routes['POST'][$uri] = $callback;
     }
 
@@ -37,8 +39,16 @@ class Route {
 
         $uri = self::clearUri($uri);
 
-        echo $uri;
-        echo "<br>";
-        echo $method;
+        // Iterar las rutas registradas en el verbo http de la petición
+        foreach (self::$routes[$method] as $route => $callback) {
+            // Si la url de la petición coincide con una ruta, se ejecuta su callback y sale de la función
+            if ($route === $uri) {
+                $callback();
+                return;
+            }
+        }
+
+        // Si la url de la petición no es encontrada, se emite un mensaje de error;
+        echo "404 | La ruta $uri no existe";
     }
 }
