@@ -15,4 +15,10 @@ class Route {
     public static function post(string $uri, callable $callback): void {
         self::$routes['POST'][$uri] = $callback;
     }
+
+    public static function dispatch(): void {
+        $uri = $_SERVER["REQUEST_URI"];
+
+        echo $uri;
+    }
 }
