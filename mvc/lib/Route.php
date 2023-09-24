@@ -5,11 +5,16 @@ namespace Lib;
 class Route {
     // Propiedad para almacenar las URLs válidas de la aplicación
     private array $routes = [
-        'about'   => function () {
+        'GET' => [
+            'about'   => function () {
 
-        },
-        'contact' => function () {
+            },
+            'contact' => function () {
 
-        },
+            },
+        ],
+        'POST' => [
+            
+        ],
     ];
 }
