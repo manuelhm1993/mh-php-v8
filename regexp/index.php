@@ -3,6 +3,6 @@
 $cadena = "Holu";
 
 // Declaración de expresión regular básica
-$expresion = "/hol[aeiou]/i";
+$expresion = "/hol*/i";
 
 echo (preg_match($expresion, $cadena)) ? 'Cumple' : 'No cumple';
